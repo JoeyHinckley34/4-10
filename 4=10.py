@@ -1,7 +1,8 @@
-#problem: give n numbers, what combination of + - * / makes x
+#problem: give n numbers, what combination of + - * / and () makes x
 
 from itertools import permutations, product, zip_longest, combinations
- 
+from pars import genPars
+
 def genAll(nums):
     # Get all permutations of nums
     perm = list(permutations(nums))
@@ -24,28 +25,26 @@ def genAll(nums):
 
             finIter += 1
 
-   # OpenPars = [0,2,4]
-    #ClosePars = [3,5,7]
+    parList = genPars(len(nums))
 
-    #p = combinations(pars,2)
-  
-    #for i, x in enumerate(p):
-    #    print(i,x)
+    finalP = []
 
-    #pars = []
+    for f in finalList:
+        finalP.append(f)
+        for p in parList:
+            x = f[:]
+            if len(p) != 2:
+                print("ERROR incorrect number of parentheses")
+            x.insert(p[0],'(')
+            x.insert(p[1],')')
+            finalP.append(x)
 
-    #for f in finalList:
-    #    pars.append(f)
-
-    #    f.insert(0,'(')
-    #    print(f)
-
-
+    # for f in finalP:
+    #     print(f)
 
     #compress the list of lists into a list of strings
-    final = [''.join(str(element) for element in f) for f in finalList]
+    final = [''.join(str(element) for element in f) for f in finalP]
 
- 
     return final
 
 def calculate(final,x):
@@ -62,7 +61,7 @@ def calculate(final,x):
 
 
 def main():
-    nums = [4,4,3,8]
+    nums = [7,2,9,2]
 
     final = genAll(nums)    
     calculate(final,10)
