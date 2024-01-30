@@ -1,6 +1,4 @@
 #problem: give n numbers, what combination of + - * / makes x
-#inspiration 4=10 game.
-#This problem done in HTML, CSS, and Javascript: https://eigilnikolajsen.dk/4is10-solver/
 
 from itertools import permutations, product, zip_longest, combinations
  
@@ -26,25 +24,28 @@ def genAll(nums):
 
             finIter += 1
 
-    
+   # OpenPars = [0,2,4]
+    #ClosePars = [3,5,7]
+
+    #p = combinations(pars,2)
+  
+    #for i, x in enumerate(p):
+    #    print(i,x)
+
+    #pars = []
+
+    #for f in finalList:
+    #    pars.append(f)
+
+    #    f.insert(0,'(')
+    #    print(f)
+
+
+
     #compress the list of lists into a list of strings
     final = [''.join(str(element) for element in f) for f in finalList]
 
-
-
-    pars = [0,2,4,6]
-    p = combinations(pars,2)
-  
-    for i, x in enumerate(p):
-        print(i,x)
-    
-    # for f in final:
-    #     print(f)
-
-
-
-
-
+ 
     return final
 
 def calculate(final,x):
