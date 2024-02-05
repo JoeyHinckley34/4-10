@@ -47,6 +47,7 @@ def genAll(nums):
 
 def calculate(final,x):
     results = {}
+    
     for f in final:
         try:
             results[f] = eval(f)
@@ -58,13 +59,16 @@ def calculate(final,x):
         
     #TO DO 
     #Prune equal solutions
-    
+    p = False
+
     for key,val in results.items():
         if val == 10:
             print(key,val)
+            p = True
             break
 
-    print("No Solution")
+    if not p:
+        print("No Solution")
         
 def main():
 
