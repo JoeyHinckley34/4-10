@@ -48,34 +48,51 @@ def genAll(nums):
 def calculate(final,x):
     results = {}
     
+    p = False
+
     for f in final:
         try:
             results[f] = eval(f)
             if results[f] == x:
-                print(results[f])
+                print(f,'=',results[f])
+                p = True
                 break
         except ZeroDivisionError:
             continue
         
     #TO DO 
     #Prune equal solutions
-    p = False
+   
 
-    for key,val in results.items():
-        if val == 10:
-            print(key,val)
-            p = True
-            break
+    # for key,val in results.items():
+    #     if val == 10:
+    #         print(key,val)
+    #         p = True
+    #         break
 
     if not p:
-        print("No Solution")
+        print("No Solution ",final[0].split("+"))
         
-def main():
+#@param n : desired size of list
+#@param m : range
+#@returns allnums : a list of list constisting of all possible ways to arrange n numbers in the range 0-m without duplicates
+def generate_allnums(n, m):
+    return set([tuple(sorted(combination)) for combination in product(range(m), repeat = n)])
 
-    allnums = [ [i,j,k,l] for i in range(10) for j in range(10) for k in range(10) for l in range(10)]
+def main():
+    allnums = generate_allnums(4, 10)
+
+
+    #allnums = genAllNums(4,10)
+    # print(allnums)
+    # for a in allnums:
+    #     print(a)
+    #print(len(allnums))
+
+    #allnums = [ [i,j,k,l] for i in range(10) for j in range(10) for k in range(10) for l in range(10)]
 
     for a in allnums:
-        print(a)
+        #print(a)
         final = genAll(a)    
         calculate(final,10)
 

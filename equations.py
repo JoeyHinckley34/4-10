@@ -16,10 +16,7 @@ def test():
 
     a = equation('1+2+3+4')
 
-
-
-
     print(a)
 
 
-test()
+#test()

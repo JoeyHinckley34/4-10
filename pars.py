@@ -25,7 +25,6 @@ def genPars(n):
     return parList
 
 
-
 def test():
     n = [ 1, '+', 2, '+', 3, '+', 4 ]
 
@@ -45,7 +44,6 @@ def test():
         print(f)
 
     printnCkpretty(17)
-
 
 
 # test()
