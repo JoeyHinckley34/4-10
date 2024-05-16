@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 is 10 Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h3 {
+            text-align: center;
+        }
+        .numbers {
+            text-align: center;
+            font-size: 24px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        input[type="number"] {
+            width: 60px;
+            margin: 0 5px;
+            text-align: center;
+            padding: 5px;
+        }
+        .submit-container {
+            text-align: center;
+        }
+        input[type="submit"] {
+            padding: 20px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .solved-message {
+            display: none;
+            text-align: center;
+            margin-top: 10px;
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>4 is 10 Calculator</h1>
+    <h3>Problem: give n numbers, what combination of + - * / and () makes x</h3>
+    <form id="numberForm">
+        <div class="numbers">
+            <input type="number" id="number1" value="3" min="0">
+            <input type="number" id="number2" value="4" min="0">
+            <input type="number" id="number3" value="3" min="0">
+            <input type="number" id="number4" value="4" min="0">
+        </div>
+        <div class="submit-container">
+            <input type="submit" value="Solve">
+            <span class="solved-message" id="solvedMessage">Solved!</span>
+        </div>
+    </form>
+</div>
+
+<script>
+    document.getElementById("numberForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        updateNumbers();
+    });
+
+    function updateNumbers() {
+        var number1 = document.getElementById("number1").value;
+        var number2 = document.getElementById("number2").value;
+        var number3 = document.getElementById("number3").value;
+        var number4 = document.getElementById("number4").value;
+
+        document.getElementById("number1").innerText = number1;
+        document.getElementById("number2").innerText = number2;
+        document.getElementById("number3").innerText = number3;
+        document.getElementById("number4").innerText = number4;
+
+        document.getElementById("solvedMessage").style.display = "block"; // Display the "Solved!" message
+    }
+</script>
+
+</body>
+</html>
