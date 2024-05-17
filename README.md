@@ -5,7 +5,7 @@ Given a list of numbers and a target number, create an arithmetic expression usi
 Current operators implemneted: + - * / and () <br>
 ## Example 
 Numbers: 2, 5, 7, 8 <br>
-Target: 10, x = 10 <br>
+Target: 10 <br>
 Example (7 + 8 + 5) / 2 = 10<br>
 <br>
 Inspired by [4=10 game](https://fourequalsten.app/) <br>
