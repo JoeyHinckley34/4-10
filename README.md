@@ -8,6 +8,7 @@ Numbers: 2, 5, 7, 8 <br>
 Target: 10 <br>
 Example (7 + 8 + 5) / 2 = 10<br>
 <br>
-Inspired by [4=10 game](https://fourequalsten.app/) <br>
-[Repository inspiration](https://eigilnikolajsen.dk/4is10-solver/) <br>
+### Inpsiration
+[4=10 game](https://fourequalsten.app/) <br>
+[Repository](https://eigilnikolajsen.dk/4is10-solver/) <br>
 
